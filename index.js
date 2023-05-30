@@ -12,6 +12,7 @@ import Product from "./models/Product.js";
 import KPI from "./models/KPI.js";
 import TRANSACTION from "./models/TRANSACTION.js";
 import { kpis, products, transactions } from "./data/data.js";
+import itemRoutes from "./routes/item.js";
 
 dotenv.config();
 const app = express();
@@ -26,6 +27,7 @@ app.use(cors());
 app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
 app.use("/transaction", transactionRoutes);
+app.use("/item", itemRoutes);
 
 const PORT = process.env.PORT || 9000;
 
