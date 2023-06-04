@@ -21,6 +21,8 @@ router.put("/items", async (req, res) => {
       !req.body.stock
     ) {
       throw new Error("Missing data. Please fill all fields.");
+    } else if (req.body.price <= 0) {
+      throw new Error("Invalid values.");
     }
     const createdItem = await Item.create({
       name: req.body.name,

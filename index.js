@@ -11,7 +11,8 @@ import transactionRoutes from "./routes/transaction.js";
 import Product from "./models/Product.js";
 import KPI from "./models/KPI.js";
 import TRANSACTION from "./models/TRANSACTION.js";
-import { kpis, products, transactions } from "./data/data.js";
+import Item from "./models/Items.js";
+import { items, kpis, products, transactions } from "./data/data.js";
 import itemRoutes from "./routes/item.js";
 
 dotenv.config();
@@ -48,6 +49,7 @@ mongoose
     // KPI.insertMany(kpis);
     // Product.insertMany(products);
     // TRANSACTION.insertMany(transactions);
+    // Item.insertMany(items);
   })
   .catch((error) => {
     console.log(error);
